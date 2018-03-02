@@ -11,9 +11,6 @@ public class AlgorithmTest {
         Algorithm.run(9, AlgorithmParams.get());
 
         Algorithm.run(47, AlgorithmParams.get());
-
-        Algorithm.run(1295, AlgorithmParams.get()
-            .iterations(500));
     }
 
 }
