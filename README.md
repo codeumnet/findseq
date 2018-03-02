@@ -33,7 +33,7 @@ longer the algorithm works.
 **crossoverRate** - a probability that two selected individuals will be interbred. If they are not interbred, they will be added to a new
  population as is.
  
- **mutationRate** - a probability that a certain individual will mutate.
+ **mutationRate** - a probability of mutation (for parts of chromosome).
  
  **elitism** - if this flag is set, one individual which fits best the conditions (fitness function) will be added to the next population
   without changes.  
