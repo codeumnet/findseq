@@ -27,6 +27,6 @@ public class ChromosomeGenerator {
     }
 
     private static int getMaxChromosomeValue(int targetValue) {
-        return targetValue * targetValue - targetValue ;
+        return 2 * targetValue - 1 ;
     }
 }
