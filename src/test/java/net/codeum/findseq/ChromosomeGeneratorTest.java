@@ -39,9 +39,4 @@ public class ChromosomeGeneratorTest {
         assertTrue("Chromosome length should be multiple to 4", result.length() % 4 == 0);
         assertTrue("Result contains wrong symbols", Pattern.matches("^[01]+$", result));
     }
-
-    @Test
-    public void getMaxChromosomeValue() {
-        assertEquals("Wrong max chromosome value", 246, ChromosomeGenerator.getMaxChromosomeValue(123));
-    }
 }
