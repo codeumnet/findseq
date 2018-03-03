@@ -16,8 +16,7 @@ public class ChromosomeGeneratorTest {
         final String result = ChromosomeGenerator.generate(random.nextInt(10));
 
         assertTrue("Chromosome should not be empty", result.length() > 0);
-        assertTrue("Chromosome length should be multiple to 4", result.length() % 4 == 0);
-        assertTrue("Result contains wrong symbols", Pattern.matches("^[01]+$", result));
+        assertTrue("Result contains wrong symbols", Pattern.matches("^[0-9\\+\\-\\*\\/]+$", result));
     }
 
     @Test
@@ -26,8 +25,7 @@ public class ChromosomeGeneratorTest {
         final String result = ChromosomeGenerator.generate(random.nextInt(100));
 
         assertTrue("Chromosome should not be empty", result.length() > 0);
-        assertTrue("Chromosome length should be multiple to 4", result.length() % 4 == 0);
-        assertTrue("Result contains wrong symbols", Pattern.matches("^[01]+$", result));
+        assertTrue("Result contains wrong symbols", Pattern.matches("^[0-9\\+\\-\\*\\/]+$", result));
     }
 
     @Test
@@ -36,7 +34,6 @@ public class ChromosomeGeneratorTest {
         final String result = ChromosomeGenerator.generate(random.nextInt(1000000));
 
         assertTrue("Chromosome should not be empty", result.length() > 0);
-        assertTrue("Chromosome length should be multiple to 4", result.length() % 4 == 0);
-        assertTrue("Result contains wrong symbols", Pattern.matches("^[01]+$", result));
+        assertTrue("Result contains wrong symbols", Pattern.matches("^[0-9\\+\\-\\*\\/]+$", result));
     }
 }

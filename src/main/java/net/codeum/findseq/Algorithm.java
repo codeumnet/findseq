@@ -40,7 +40,7 @@ public class Algorithm {
 
         if (calculator.calculateFitness(result) == 1) {
             System.out.println(String.format("For target number %d was found expression '%s'", targetValue,
-                ChromosomeTranslator.toExpression(result)));
+                ChromosomeEvaluator.toExpression(result)));
         } else {
             System.out.println(String.format("For target number %d were not found any expressions", targetValue));
         }

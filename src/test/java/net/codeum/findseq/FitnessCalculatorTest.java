@@ -14,13 +14,13 @@ public class FitnessCalculatorTest {
     public void calculateFitness() {
         // 5 + 5 * 6 / 2 = 30
         final String chromosome = String.join("", Arrays.asList(
-            ChromosomeTranslator.Gene.FIVE.getValue(),
-            ChromosomeTranslator.Gene.PLUS.getValue(),
-            ChromosomeTranslator.Gene.FIVE.getValue(),
-            ChromosomeTranslator.Gene.MULT.getValue(),
-            ChromosomeTranslator.Gene.SIX.getValue(),
-            ChromosomeTranslator.Gene.DIV.getValue(),
-            ChromosomeTranslator.Gene.TWO.getValue()
+            ChromosomeEvaluator.Gene.FIVE.getValue(),
+            ChromosomeEvaluator.Gene.PLUS.getValue(),
+            ChromosomeEvaluator.Gene.FIVE.getValue(),
+            ChromosomeEvaluator.Gene.MULT.getValue(),
+            ChromosomeEvaluator.Gene.SIX.getValue(),
+            ChromosomeEvaluator.Gene.DIV.getValue(),
+            ChromosomeEvaluator.Gene.TWO.getValue()
         ));
 
         final int targetValue = 10;

@@ -19,8 +19,8 @@ public class ChromosomeGenerator {
         final StringBuilder result = new StringBuilder("");
 
         for (int i = 0; i < length; i++) {
-            final int index = random.nextInt(ChromosomeTranslator.Gene.values().length - 1);
-            result.append(ChromosomeTranslator.Gene.values()[index].getValue());
+            final int index = random.nextInt(ChromosomeEvaluator.Gene.values().length - 1);
+            result.append(ChromosomeEvaluator.Gene.values()[index].getValue());
         }
 
         return result.toString();

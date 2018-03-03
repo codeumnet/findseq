@@ -9,7 +9,7 @@ public class FitnessCalculator {
     public FitnessCalculator(int targetValue) {this.targetValue = targetValue;}
 
     public double calculateFitness(String chromosome) {
-        return 1.0 / (1 + abs(this.targetValue - ChromosomeTranslator.translateChromosome(chromosome)));
+        return 1.0 / (1 + abs(this.targetValue - ChromosomeEvaluator.evaluateChromosome(chromosome)));
     }
 
     public int getTargetValue() {

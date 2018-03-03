@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ChromosomeTranslator {
+public class ChromosomeEvaluator {
 
     enum Gene {
         ZERO(0),
@@ -68,7 +68,7 @@ public class ChromosomeTranslator {
         }
     }
 
-    public static int translateChromosome(String chromosome) {
+    public static int evaluateChromosome(String chromosome) {
         final List<Gene> genes = toGenes(chromosome);
 
         if (genes.isEmpty()) {

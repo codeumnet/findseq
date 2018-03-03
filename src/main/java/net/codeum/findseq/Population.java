@@ -72,7 +72,7 @@ public class Population {
     @Override
     public String toString() {
         final List<Integer> list = Arrays.stream(this.population)
-            .map(individual -> ChromosomeTranslator.translateChromosome(individual.getChromosome()))
+            .map(individual -> ChromosomeEvaluator.evaluateChromosome(individual.getChromosome()))
             .collect(Collectors.toList());
 
         return list.toString();
