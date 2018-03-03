@@ -12,11 +12,11 @@ public class ChromosomeTranslatorTest {
     public void translateSimpleCase() {
         // 1 + 5 * 6 = 36
         final String chromosome = String.join("", Arrays.asList(
-            ChromosomeTranslator.Gene.ONE.getCode(),
-            ChromosomeTranslator.Gene.PLUS.getCode(),
-            ChromosomeTranslator.Gene.FIVE.getCode(),
-            ChromosomeTranslator.Gene.MULT.getCode(),
-            ChromosomeTranslator.Gene.SIX.getCode()
+            ChromosomeTranslator.Gene.ONE.getValue(),
+            ChromosomeTranslator.Gene.PLUS.getValue(),
+            ChromosomeTranslator.Gene.FIVE.getValue(),
+            ChromosomeTranslator.Gene.MULT.getValue(),
+            ChromosomeTranslator.Gene.SIX.getValue()
         ));
 
         final int result = ChromosomeTranslator.translateChromosome(chromosome);
@@ -28,25 +28,25 @@ public class ChromosomeTranslatorTest {
     public void translateAllOperationsAndDigitsIncluded() {
         // 9 + 8 - 7 * 6 / 5 + 4 - 3 * 2 - 1 / 5 = 5
         final String chromosome = String.join("", Arrays.asList(
-            ChromosomeTranslator.Gene.NINE.getCode(),
-            ChromosomeTranslator.Gene.PLUS.getCode(),
-            ChromosomeTranslator.Gene.EIGHT.getCode(),
-            ChromosomeTranslator.Gene.MINUS.getCode(),
-            ChromosomeTranslator.Gene.SEVEN.getCode(),
-            ChromosomeTranslator.Gene.MULT.getCode(),
-            ChromosomeTranslator.Gene.SIX.getCode(),
-            ChromosomeTranslator.Gene.DIV.getCode(),
-            ChromosomeTranslator.Gene.FIVE.getCode(),
-            ChromosomeTranslator.Gene.PLUS.getCode(),
-            ChromosomeTranslator.Gene.FOUR.getCode(),
-            ChromosomeTranslator.Gene.MINUS.getCode(),
-            ChromosomeTranslator.Gene.THREE.getCode(),
-            ChromosomeTranslator.Gene.MULT.getCode(),
-            ChromosomeTranslator.Gene.TWO.getCode(),
-            ChromosomeTranslator.Gene.MINUS.getCode(),
-            ChromosomeTranslator.Gene.ONE.getCode(),
-            ChromosomeTranslator.Gene.DIV.getCode(),
-            ChromosomeTranslator.Gene.FIVE.getCode()
+            ChromosomeTranslator.Gene.NINE.getValue(),
+            ChromosomeTranslator.Gene.PLUS.getValue(),
+            ChromosomeTranslator.Gene.EIGHT.getValue(),
+            ChromosomeTranslator.Gene.MINUS.getValue(),
+            ChromosomeTranslator.Gene.SEVEN.getValue(),
+            ChromosomeTranslator.Gene.MULT.getValue(),
+            ChromosomeTranslator.Gene.SIX.getValue(),
+            ChromosomeTranslator.Gene.DIV.getValue(),
+            ChromosomeTranslator.Gene.FIVE.getValue(),
+            ChromosomeTranslator.Gene.PLUS.getValue(),
+            ChromosomeTranslator.Gene.FOUR.getValue(),
+            ChromosomeTranslator.Gene.MINUS.getValue(),
+            ChromosomeTranslator.Gene.THREE.getValue(),
+            ChromosomeTranslator.Gene.MULT.getValue(),
+            ChromosomeTranslator.Gene.TWO.getValue(),
+            ChromosomeTranslator.Gene.MINUS.getValue(),
+            ChromosomeTranslator.Gene.ONE.getValue(),
+            ChromosomeTranslator.Gene.DIV.getValue(),
+            ChromosomeTranslator.Gene.FIVE.getValue()
         ));
 
         final int result = ChromosomeTranslator.translateChromosome(chromosome);
@@ -59,14 +59,14 @@ public class ChromosomeTranslatorTest {
         // 1 + 5 * 6 = 36
         final String chromosome = String.join("", Arrays.asList(
             "1111",
-            ChromosomeTranslator.Gene.ONE.getCode(),
-            ChromosomeTranslator.Gene.PLUS.getCode(),
+            ChromosomeTranslator.Gene.ONE.getValue(),
+            ChromosomeTranslator.Gene.PLUS.getValue(),
             "1110",
-            ChromosomeTranslator.Gene.FIVE.getCode(),
+            ChromosomeTranslator.Gene.FIVE.getValue(),
             "1111",
             "1110",
-            ChromosomeTranslator.Gene.MULT.getCode(),
-            ChromosomeTranslator.Gene.SIX.getCode()
+            ChromosomeTranslator.Gene.MULT.getValue(),
+            ChromosomeTranslator.Gene.SIX.getValue()
         ));
 
         final int result = ChromosomeTranslator.translateChromosome(chromosome);
@@ -77,7 +77,7 @@ public class ChromosomeTranslatorTest {
     @Test
     public void translateCaseWithOneGene() {
         final String chromosome = String.join("", Arrays.asList(
-            ChromosomeTranslator.Gene.ONE.getCode()
+            ChromosomeTranslator.Gene.ONE.getValue()
         ));
 
         final int result = ChromosomeTranslator.translateChromosome(chromosome);
@@ -88,7 +88,7 @@ public class ChromosomeTranslatorTest {
     @Test
     public void translateCaseWithOneOpGene() {
         final String chromosome = String.join("", Arrays.asList(
-            ChromosomeTranslator.Gene.PLUS.getCode()
+            ChromosomeTranslator.Gene.PLUS.getValue()
         ));
 
         final int result = ChromosomeTranslator.translateChromosome(chromosome);
@@ -100,20 +100,20 @@ public class ChromosomeTranslatorTest {
     public void translateCaseWithMessOfGenes() {
         final String chromosome = String.join("", Arrays.asList(
             "1111",
-            ChromosomeTranslator.Gene.DIV.getCode(),
-            ChromosomeTranslator.Gene.ONE.getCode(),
-            ChromosomeTranslator.Gene.TWO.getCode(),
-            ChromosomeTranslator.Gene.THREE.getCode(), // 3
-            ChromosomeTranslator.Gene.PLUS.getCode(),
+            ChromosomeTranslator.Gene.DIV.getValue(),
+            ChromosomeTranslator.Gene.ONE.getValue(),
+            ChromosomeTranslator.Gene.TWO.getValue(),
+            ChromosomeTranslator.Gene.THREE.getValue(), // 3
+            ChromosomeTranslator.Gene.PLUS.getValue(),
             "1111",
-            ChromosomeTranslator.Gene.MULT.getCode(),  // *
-            ChromosomeTranslator.Gene.FIVE.getCode(),
-            ChromosomeTranslator.Gene.FOUR.getCode(),
+            ChromosomeTranslator.Gene.MULT.getValue(),  // *
+            ChromosomeTranslator.Gene.FIVE.getValue(),
+            ChromosomeTranslator.Gene.FOUR.getValue(),
             "1111",
-            ChromosomeTranslator.Gene.EIGHT.getCode(), // 8
-            ChromosomeTranslator.Gene.MINUS.getCode(),  // -
-            ChromosomeTranslator.Gene.SIX.getCode(),   // 6
-            ChromosomeTranslator.Gene.MINUS.getCode()
+            ChromosomeTranslator.Gene.EIGHT.getValue(), // 8
+            ChromosomeTranslator.Gene.MINUS.getValue(),  // -
+            ChromosomeTranslator.Gene.SIX.getValue(),   // 6
+            ChromosomeTranslator.Gene.MINUS.getValue()
             // 3 * 8 - 6 = 18
         ));
 
@@ -126,11 +126,11 @@ public class ChromosomeTranslatorTest {
     public void toExpressionBasicCase() {
         // 1 + 5 * 6 = 36
         final String chromosome = String.join("", Arrays.asList(
-            ChromosomeTranslator.Gene.ONE.getCode(),
-            ChromosomeTranslator.Gene.PLUS.getCode(),
-            ChromosomeTranslator.Gene.FIVE.getCode(),
-            ChromosomeTranslator.Gene.MULT.getCode(),
-            ChromosomeTranslator.Gene.SIX.getCode()
+            ChromosomeTranslator.Gene.ONE.getValue(),
+            ChromosomeTranslator.Gene.PLUS.getValue(),
+            ChromosomeTranslator.Gene.FIVE.getValue(),
+            ChromosomeTranslator.Gene.MULT.getValue(),
+            ChromosomeTranslator.Gene.SIX.getValue()
         ));
 
         final String result = ChromosomeTranslator.toExpression(chromosome);
@@ -142,20 +142,20 @@ public class ChromosomeTranslatorTest {
     public void toExpressionWithMessOfGenes() {
         final String chromosome = String.join("", Arrays.asList(
             "1111",
-            ChromosomeTranslator.Gene.DIV.getCode(),
-            ChromosomeTranslator.Gene.ONE.getCode(),
-            ChromosomeTranslator.Gene.TWO.getCode(),
-            ChromosomeTranslator.Gene.THREE.getCode(), // 3
-            ChromosomeTranslator.Gene.PLUS.getCode(),
+            ChromosomeTranslator.Gene.DIV.getValue(),
+            ChromosomeTranslator.Gene.ONE.getValue(),
+            ChromosomeTranslator.Gene.TWO.getValue(),
+            ChromosomeTranslator.Gene.THREE.getValue(), // 3
+            ChromosomeTranslator.Gene.PLUS.getValue(),
             "1111",
-            ChromosomeTranslator.Gene.MULT.getCode(),  // *
-            ChromosomeTranslator.Gene.FIVE.getCode(),
-            ChromosomeTranslator.Gene.FOUR.getCode(),
+            ChromosomeTranslator.Gene.MULT.getValue(),  // *
+            ChromosomeTranslator.Gene.FIVE.getValue(),
+            ChromosomeTranslator.Gene.FOUR.getValue(),
             "1111",
-            ChromosomeTranslator.Gene.EIGHT.getCode(), // 8
-            ChromosomeTranslator.Gene.MINUS.getCode(),  // -
-            ChromosomeTranslator.Gene.SIX.getCode(),   // 6
-            ChromosomeTranslator.Gene.MINUS.getCode()
+            ChromosomeTranslator.Gene.EIGHT.getValue(), // 8
+            ChromosomeTranslator.Gene.MINUS.getValue(),  // -
+            ChromosomeTranslator.Gene.SIX.getValue(),   // 6
+            ChromosomeTranslator.Gene.MINUS.getValue()
             // 3 * 8 - 6 = 18
         ));
 

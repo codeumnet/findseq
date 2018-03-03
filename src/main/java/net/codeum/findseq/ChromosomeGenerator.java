@@ -20,13 +20,13 @@ public class ChromosomeGenerator {
 
         for (int i = 0; i < length; i++) {
             final int index = random.nextInt(ChromosomeTranslator.Gene.values().length - 1);
-            result.append(ChromosomeTranslator.Gene.values()[index].getCode());
+            result.append(ChromosomeTranslator.Gene.values()[index].getValue());
         }
 
         return result.toString();
     }
 
     public static int getMaxChromosomeValue(int targetValue) {
-        return 2 * targetValue;
+        return targetValue * targetValue - targetValue ;
     }
 }

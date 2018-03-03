@@ -7,42 +7,52 @@ import java.util.stream.Collectors;
 public class ChromosomeTranslator {
 
     enum Gene {
-        ZERO("0000", 0),
-        ONE("0001", 1),
-        TWO("0010", 2),
-        THREE("0011", 3),
-        FOUR("0100", 4),
-        FIVE("0101", 5),
-        SIX("0110", 6),
-        SEVEN("0111", 7),
-        EIGHT("1000", 8),
-        NINE("1001", 9),
-        PLUS("1010", "+"),
-        MINUS("1011", "-"),
-        MULT("1100", "*"),
-        DIV("1101", "/"),
+        ZERO(0),
+        ONE( 1),
+        TWO(2),
+        THREE(3),
+        FOUR(4),
+        FIVE(5),
+        SIX(6),
+        SEVEN(7),
+        EIGHT(8),
+        NINE(9),
+        PLUS("+"),
+        MINUS("-"),
+        MULT("*"),
+        DIV("/"),
         NONE();
 
-        private final String code;
         private final String value;
         private final int intValue;
 
         Gene() {
-            this.code = null;
             this.value = null;
             this.intValue = -1;
         }
 
-        Gene(String code, String value) {
-            this.code = code;
+        Gene(String value) {
             this.value = value;
             this.intValue = -1;
         }
 
-        Gene(String code, int value) {
-            this.code = code;
+        Gene(int value) {
             this.intValue = value;
             this.value = String.valueOf(value);
+        }
+
+        public static Gene getByValue(String value) {
+            if (value == null) {
+                return Gene.NONE;
+            }
+
+            for (Gene gene : values()) {
+                if (value.equalsIgnoreCase(gene.value)) {
+                    return gene;
+                }
+            }
+
+            return Gene.NONE;
         }
 
         public String getValue() {
@@ -55,24 +65,6 @@ public class ChromosomeTranslator {
 
         public int getIntValue() {
             return intValue;
-        }
-
-        public String getCode() {
-            return code;
-        }
-
-        public static Gene getByCode(String code) {
-            if (code == null) {
-                return Gene.NONE;
-            }
-
-            for (Gene gene : values()) {
-                if (code.equalsIgnoreCase(gene.code)) {
-                    return gene;
-                }
-            }
-
-            return Gene.NONE;
         }
     }
 
@@ -97,9 +89,9 @@ public class ChromosomeTranslator {
     private static List<Gene> toGenes(String chromosome) {
         final List<Gene> genes = new LinkedList<>();
         boolean expectDigit = true;
-        for (int i = 0; i <= chromosome.length() - 4; i += 4) {
-            final String geneCode = chromosome.substring(i, i + 4);
-            final Gene gene = Gene.getByCode(geneCode);
+        for (int i = 0; i < chromosome.length(); i++) {
+            final String geneCode = Character.toString(chromosome.charAt(i));
+            final Gene gene = Gene.getByValue(geneCode);
 
             if (Gene.NONE.equals(gene)) {
                 continue;

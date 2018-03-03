@@ -35,14 +35,14 @@ public class Individual {
             return result;
         }
 
-        final int thisCrossoverPos = random.nextInt(this.chromosome.length() / 4);
-        final int thatCrossoverPos = random.nextInt(thatIndividual.getChromosome().length() / 4);
+        final int thisCrossoverPos = random.nextInt(this.chromosome.length());
+        final int thatCrossoverPos = random.nextInt(thatIndividual.getChromosome().length());
 
-        result.add(new Individual(this.chromosome.substring(0, 4 * thisCrossoverPos)
-            + thatIndividual.getChromosome().substring(4 * thatCrossoverPos), this.calculator));
+        result.add(new Individual(this.chromosome.substring(0, thisCrossoverPos)
+            + thatIndividual.getChromosome().substring(thatCrossoverPos), this.calculator));
 
-        result.add(new Individual(thatIndividual.getChromosome().substring(0, 4 * thatCrossoverPos)
-            + this.chromosome.substring(4 * thisCrossoverPos), this.calculator));
+        result.add(new Individual(thatIndividual.getChromosome().substring(0, thatCrossoverPos)
+            + this.chromosome.substring(thisCrossoverPos), this.calculator));
 
         return result;
     }
